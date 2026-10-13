@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Protectoras</title>
+</head>
+<body>
+    <h1>Protectoras</h1>
+
+    {% for protectora in protectoras %}
+        <hr>
+        <h2>{{ protectora.nombre }}</h2>
+        <p>Descripción: {{ protectora.descripcion }}</p>
+        <p>Fecha de creación: {{ protectora.fecha_creacion|date:"d/m/Y H:i" }}</p>
+    {% empty %}
+        <p>No hay protectoras registradas.</p>
+    {% endfor %}
+
+    <nav>
+        <a href="{% url 'lista_animales' %}">Animales</a>
+        <a href="{% url 'lista_colaboradores' %}">Colaboradores</a>
+    </nav>
+</body>
+</html>
