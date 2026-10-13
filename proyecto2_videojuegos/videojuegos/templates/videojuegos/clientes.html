@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes de la tienda</h1>
+
+    {% for cliente in clientes %}
+        <hr>
+        <h2>{{ cliente.nombre }}</h2>
+        <p>Correo: {{ cliente.correo }}</p>
+        <p>Fecha de registro: {{ cliente.fecha_registro|date:"d/m/Y H:i" }}</p>
+    {% empty %}
+        <p>No hay clientes registrados.</p>
+    {% endfor %}
+
+    <a href="{% url 'lista_videojuegos' %}">Videojuegos</a>
+    <a href="{% url 'lista_pedidos' %}">Pedidos</a>
+</body>
+</html>

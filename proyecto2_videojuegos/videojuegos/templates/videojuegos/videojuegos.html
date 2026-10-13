@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Videojuegos</title>
+</head>
+<body>
+    <h1>Catálogo de videojuegos</h1>
+
+    {% for videojuego in videojuegos %}
+        <hr>
+        <h2>{{ videojuego.titulo }}</h2>
+        <p>Plataforma: {{ videojuego.plataforma }}</p>
+        <p>Precio: {{ videojuego.precio }} €</p>
+    {% empty %}
+        <p>No hay videojuegos registrados.</p>
+    {% endfor %}
+
+    <a href="{% url 'lista_clientes' %}">Clientes</a>
+    <a href="{% url 'lista_pedidos' %}">Pedidos</a>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from .models import Animal, Protectora, Colaborador
 
@@ -29,3 +28,5 @@ def lista_colaboradores(request):
         {"colaboradores": colaboradores}
     )
 
+def inicio(request):
+    return render(request, "animales/inicio.html")
