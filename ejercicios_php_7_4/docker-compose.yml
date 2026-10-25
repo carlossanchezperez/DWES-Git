@@ -1,0 +1,9 @@
+services:
+  ejercicios-php:
+    build: .
+    container_name: ejercicios_php_7_4
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
